@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export async function askOpenAI(prompt) {
+export async function askPerplexity(prompt) {
   const response = await axios.post(
-    "https://api.openai.com/v1/chat/completions",
+    "https://api.perplexity.ai/chat/completions",
     {
-      model: "gpt-4o-mini",
+      model: "sonar-medium-chat",
       messages: [
         {
           role: "user",
@@ -15,7 +15,7 @@ export async function askOpenAI(prompt) {
     },
     {
       headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
         "Content-Type": "application/json"
       }
     }
